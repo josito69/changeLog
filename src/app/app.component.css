@@ -1,0 +1,20 @@
+mat-grid-list{
+    width:80%;
+    margin:auto;
+    margin-bottom: 10px;
+   }
+.lector{
+    border-radius:10px;margin-top:10px;
+    box-shadow:-10px 10px 18px black; 
+}
+mat-grid-tile{
+    overflow-y: auto;
+}
+app-nuevaentrada{
+    max-width:80%;
+    min-width:50%;
+    padding-top:30px;
+}
+app-nuevaversion{
+    min-width:90%;
+}

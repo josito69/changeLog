@@ -1,0 +1,13 @@
+
+  <p [ngStyle]="{'color':'white'}">Changelogs</p>
+  <mat-form-field>
+    <mat-chip-list>
+      <mat-chip *ngFor="let log of logs">
+        <span (click)="reloadLog($event,log)"> {{ log }}</span>
+        <mat-icon (click)="delLog($event,log)">remove_circle</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
+  </mat-form-field>
+  <span class="input-fill">
+    <input [(ngModel)]="newLog" type="text" placeholder="new Log" (change)="addLog()">
+  </span>

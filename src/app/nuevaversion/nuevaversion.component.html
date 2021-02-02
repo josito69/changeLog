@@ -1,0 +1,46 @@
+<div>
+  <h1>
+    {{ actualLog }}
+    <a id="downloader" style="float: right" href="#" download="json.txt"></a>
+    <mat-icon style="float: right" (click)="downloadFile($event)">arrow_circle_down</mat-icon>
+  </h1>
+</div>
+<mat-accordion [(ngModel)]="versiones">
+  <mat-expansion-panel *ngFor="let version of versiones">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ version.Name }}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{ version.Descripcion }}
+      </mat-panel-description>
+      <mat-icon>event</mat-icon>
+      <mat-label>{{ version.Fecha }}</mat-label>
+    </mat-expansion-panel-header>
+    <hr />
+    <ul *ngIf="version.Added.length">
+      <mat-chip style="background-color: red">Added</mat-chip>
+      <li *ngFor="let content of version.Added">{{ content.Content }}</li>
+    </ul>
+    <ul *ngIf="version.Changed.length">
+      <mat-chip style="background-color: purple">Changed</mat-chip>
+      <li *ngFor="let content of version.Changed">{{ content.Content }}</li>
+    </ul>
+    <ul *ngIf="version.Deprecated.length">
+      <mat-chip style="background-color: green">Deprecated</mat-chip>
+      <li *ngFor="let content of version.Deprecated">{{ content.Content }}</li>
+    </ul>
+    <ul *ngIf="version.Fixed.length">
+      <mat-chip style="background-color: orange">Fixed</mat-chip>
+      <li *ngFor="let content of version.Fixed">{{ content.Content }}</li>
+    </ul>
+    <ul *ngIf="version.Removed.length">
+      <mat-chip style="background-color: blue">Removed</mat-chip>
+      <li *ngFor="let content of version.Removed">{{ content.Content }}</li>
+    </ul>
+    <ul *ngIf="version.Security.length">
+      <mat-chip style="background-color: cyan">Security</mat-chip>
+      <li *ngFor="let content of version.Security">{{ content.Content }}</li>
+    </ul>
+  </mat-expansion-panel>
+</mat-accordion>

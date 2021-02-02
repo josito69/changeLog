@@ -1,0 +1,39 @@
+<mat-tab-group [ngModel]="cambios">
+    <mat-tab label="Changelogs">
+        <app-lector (actLog)="updateLog($event)"></app-lector>
+    </mat-tab>
+    <mat-tab label="Nueva entrada">
+        <mat-form-field>
+            <textarea matInput placeholder="Comentario" [(ngModel)]="comment" d></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Cambios</mat-label>
+            <select matNativeControl="Cambios" [(ngModel)]="cambio" name="cambios">
+                <option *ngFor="let cambio of cambios" [value]="cambio">
+                    {{cambio}}
+                </option>
+            </select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="addEntry()">Añadir</button>
+    </mat-tab>
+
+    <mat-tab label="Nueva Versión">
+        <mat-form-field appearance="fill">
+            <mat-label>Release?</mat-label>
+            <select matNativeControl="release" [(ngModel)]="release" name="release">
+                <option value="true">True</option>
+                <option value="False">False</option>
+            </select>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="string" placeholder="Ingrese nombre" [(ngModel)]="name">
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput placeholder="Descripcion" [(ngModel)]="descripcion"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="addVersion()">Añadir</button>
+    </mat-tab>
+    <mat-tab label="Permisos">
+        <app-permisos (actPermit)="actualizarPermisosEfectivos($event)"></app-permisos>
+    </mat-tab>
+</mat-tab-group>

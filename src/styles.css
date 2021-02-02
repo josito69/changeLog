@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 95%; width:100%;margin:auto
+          ;}
+body {
+       font-family: Roboto, "Helvetica Neue", sans-serif;
+       background-color: rgb(221, 188, 139);
+     }
+.input-fill{
+       padding:8px 15px;
+       background-color:#7b1fa2;
+       border-radius: 100px;
+       float:right;
+       margin-top:20px;
+     }

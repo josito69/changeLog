@@ -1,0 +1,11 @@
+<mat-grid-list cols="4" rowHeight="50%">
+  <mat-grid-tile [colspan]="'4'" [rowspan]="'1'">
+    <app-nuevaentrada [actualLog]="actualLog" [versiones]="versiones" [permisos]="permisos"
+      (saveData)="saveData($event)"(actLog)="updateLog($event)"(actPermit)="actualizarPermisosEfectivos($event)"></app-nuevaentrada>
+  </mat-grid-tile>
+    <mat-grid-tile [colspan]="'4'" [rowspan]="'1'"class="lector">
+      <app-nuevaversion [actualLog]="actualLog" [versiones]="versiones" ></app-nuevaversion>
+    </mat-grid-tile>
+</mat-grid-list>
+
+

@@ -2,7 +2,10 @@
   <h1>
     {{ actualLog }}
     <a id="downloader" style="float: right" href="#" download="json.txt"></a>
-    <mat-icon style="float: right" (click)="downloadFile($event)">arrow_circle_down</mat-icon>
+    <mat-chip *ngIf="actualLog.length"   style="float: right;" (click)="downloadFile($event)">
+      Download
+      <mat-icon>arrow_circle_down</mat-icon>
+    </mat-chip>
   </h1>
 </div>
 <mat-accordion [(ngModel)]="versiones">
